@@ -1,2 +1,7 @@
 /build/
 *.o
+/debugger/dvt/
+debugger/.jxbrowser.userdata
+debugger/RemoteSystemsTempFiles
+debugger/.gitignore
+debugger/config
