@@ -10,7 +10,8 @@
 include sources.mk
 
 # PATHS
-INCLUDES = Drivers/include/
+INCLUDES = Drivers/include/ 
+INCLUDES_APPL = include/ 
 GCC_DIR = Drivers/MSP-GCC/bin
 LINKER_FILES = Drivers/linker/
 
@@ -24,7 +25,7 @@ CSTD = c99
 BASENAME = APPL
 TARGET = $(BASENAME).out
 LDFLAGS = -L $(LINKER_FILES) -T $(LINKER_FILES)$(LD)
-CFLAGS = -I $(INCLUDES) -mmcu=$(DEVICE) -O2 -g -Wall -std=$(CSTD) -v
+CFLAGS = -I $(INCLUDES) -I $(INCLUDES_APPL) -mmcu=$(DEVICE) -O2 -g -Wall -std=$(CSTD) -v
 
 # Output to log
 LOG = 2>> build/build.log
