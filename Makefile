@@ -31,6 +31,7 @@ CFLAGS = -I $(INCLUDES) -I $(INCLUDES_APPL) -mmcu=$(DEVICE) -O2 -g -Wall -std=$(
 LOG = 2>> build/build.log
 
 $(shell mkdir build)
+$(shell echo "== Start building == \n" > build/build.log)
 
 OBJS = $(SRCS_ALT:.c=.o)
 
@@ -43,4 +44,4 @@ $(TARGET): $(OBJS)
 	$(CC) $(OBJS) $(CFLAGS) $(LDFLAGS) -o build/$@ $(LOG)
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) build/build.log

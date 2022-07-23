@@ -25,18 +25,18 @@ void Gpio_v_init(void)
 {
   DIO_v_init(); // DIO driver initialization
 
-  /***************************************************
+  /* ***********************************
    * INPUTS
-  /***************************************************/
+   * ***********************************/
   // TODO replace void cast by DEM if something is wrong
   (void)DIO_u_configPin(sensor1, port1, input, gpio, disabled);
   (void)DIO_u_configPin(sensor2, port1, input, gpio, disabled);
   (void)DIO_u_configPin(sensor3, port1, input, gpio, disabled);
   (void)DIO_u_configPin(sensor4, port1, input, gpio, disabled);
 
-  /***************************************************
-  * OUTPUTS
-  /***************************************************/
+  /* ***********************************
+   * OUTPUTS
+   * ***********************************/
   // TODO replace void cast by DEM if something is wrong
   (void)DIO_u_configPin(led1, port2, output, gpio, disabled);
   (void)DIO_u_configPin(led2, port2, output, gpio, disabled);

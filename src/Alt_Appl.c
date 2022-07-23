@@ -20,7 +20,7 @@
 #define WDTPW   (0x5A00)
 #define WDTHOLD (0x0080)
 
-void main(void)
+int main(void)
 {
   WDTCTL = WDTPW | WDTHOLD;
 
