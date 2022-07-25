@@ -48,7 +48,17 @@ typedef enum
   buzzer    = bit7
 } t_Indicators;
 
+typedef struct Gpio_User
+{
+  t_Sensors  Sensor[4];
+  t_PinState State[4];
+} t_LedState;
+
 void Gpio_v_init(void);
+
+void Gpio_v_ledOn(t_Leds e_led);
+
+void Gpio_v_getLevel(t_LedState* p_ledState);
 
 #ifdef __cplusplus
 }

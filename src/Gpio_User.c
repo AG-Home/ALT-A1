@@ -47,6 +47,23 @@ void Gpio_v_init(void)
   (void)DIO_u_configPin(ledGreen, port2, output, gpio, disabled);
 }
 
+void Gpio_v_ledOn(t_Leds e_led)
+{
+  DIO_u_setPinState(e_led, port2, high);
+}
+
+void Gpio_v_getLevel(t_LedState* p_ledState)
+{
+  uint8       index;
+  const uint8 numnberOfSensors = 4;
+
+  for(index = 0; index < numnberOfSensors; index++)
+  {
+    p_ledState->Sensor[index] = index + 1;
+    (void)DIO_u_getPinState(index + 1, port2, p_ledState->State);
+  }
+}
+
 #ifdef __cplusplus
 }
 #endif

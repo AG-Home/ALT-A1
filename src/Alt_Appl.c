@@ -14,7 +14,7 @@
  *  which are relevant for the DIO Driver
  *********************************************************************************************************************/
 
-#include <Dio_Driver.h>
+#include <Gpio_User.h>
 #include <MSP430_Registers.h>
 
 #define WDTPW   (0x5A00)
@@ -24,9 +24,14 @@ int main(void)
 {
   WDTCTL = WDTPW | WDTHOLD;
 
-  DIO_v_init();
-  (void)DIO_u_configPin(bit0, port2, output, gpio, disabled);
-  (void)DIO_u_setPinState(bit0, port2, high);
+  t_LedState sensorState;
+
+  Gpio_v_init();
+
+  Gpio_v_getLevel(&sensorState);
+
+  while(1)
+    ;
 
   return 0;
 }
